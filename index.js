@@ -395,13 +395,13 @@ class SortableListView extends React.Component {
         panResponder={this.state.panResponder}
         rowData={{ data, section, index }}
         onRowActive={this.handleRowActive}
-        onRowLayout={layout =>
-          this._updateLayoutMap(index, layout.nativeEvent.layout)}
+        onRowLayout={this._updateLayoutMap(index)}
       />
     )
   }
 
-  _updateLayoutMap = (index, layout) => {
+  _updateLayoutMap = index => e => {
+    const layout = e.nativeEvent.layout
     if (this.firstRowY === undefined || layout.y < this.firstRowY) {
       this.firstRowY = layout.y
     }
