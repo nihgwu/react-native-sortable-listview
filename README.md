@@ -31,14 +31,21 @@ SortableListView passes through all the standard ListView properties to ListView
  - **`disableSorting`** _(boolean) (optional) - When set to true, all sorting will be disabled, which will effectively make the SortableListView act like a normal ListView.
  - **`onMoveStart`** _(Function)_ (Optional) - Register a handler to be called when drag start.
  - **`onMoveEnd`** _(Function)_ (Optional) - Register a handler to be called when move is completed.
-
+ - **`activeOpacity`** _(Number)_ (Optional) - Sets opacity of an active element. Default value: `0.2`.
 ## methods
 
 - **`scrollTo(...args)`** - Scrolls to a given x, y offset, either immediately or with a smooth animation. See ScrollView's scrollTo method.
 
 ---
 
-### Contributions welcome!
+### Contributing
+
+Before submitting a PR, please:
+
+1. Format your code by running `npm run prettier`.
+2. Test by running `npm run test`. (Currently this produces 2 warnings, no errors).
+3. Build the [Sortable](Sortable) example app and test fully for regressions on both iOS and android.
+4. Describe your change in the `Unreleased` section of the [Changelog](CHANGELOG.md).
 
 ---
 
