@@ -245,6 +245,7 @@ class SortableListView extends React.Component {
 
   cancel = () => {
     if (!this.moved) {
+      this.state.active && this.props.onMoveCancel && this.props.onMoveCancel()
       this.setState({
         active: false,
         hovering: false,
@@ -363,6 +364,7 @@ class SortableListView extends React.Component {
       },
       this.scrollAnimation
     )
+    this.props.onRowActive && this.props.onRowActive(row)
   }
 
   renderActiveDivider = () => {
